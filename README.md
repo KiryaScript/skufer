@@ -1,42 +1,123 @@
-# AntiOS
+Вот полностью обновленный файл **`README.md`** с добавленным баннером в самом верху. 
 
-Change Windows and hardware identifiers so that change system fingerprint.
+Этот вариант полностью описывает ваш новый функционал (SKUFER v3.0), включает список изменяемых идентификаторов (как в старом AntiOS, но актуальнее) и содержит все необходимые инструкции.
 
-### You need to install at least Python 3.6, last version preferred
+Просто скопируйте этот текст и замените им содержимое вашего файла:
 
-https://www.python.org/downloads/
+```markdown
+> [!TIP]
+> <img src="https://omochikaeri.moe/affiliate/maeko.gif" alt="88x31 badge of https://t.me/wlcvpn_bot" /> **Ищете VPN, который работает без перебоев?**
+> 
+> Я открыл свой надежный VPN-сервис в Telegram!
+> 
+> ✅ **Никаких отвалов и мертвых серверов**  
+> ✅ **Максимальная скорость и стабильный обход ВСЕХ блокировок**  
+> ✅ **Настроил один раз и забыл!**  
+> 
+> <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Rocket.png" alt="Rocket" width="25" height="25" /> Настройка занимает **всего 1 минуту**, а при переходе в бота вы получаете **FREE доступ на 24 часа!**
+> 
+> 👉 **Забрать бесплатный доступ:** [@wlcvpn_bot](https://t.me/wlcvpn_bot?start=gittra)
 
-!!!ATTENTION!!!
-* When you install Python, make sure that you select "Custom" installation mode and check "Install for all users" 
-* On the current stage this application does not back up your system initial state, run it in the virtual machine not to damage your host system
+---
 
-## How to use:
+# 🛡️ SKUFER v3.0 — Advanced System Spoofer
 
-Run `python.exe generate_fingerprint.py --help` for available options.
+**SKUFER** (бывший AntiOS) — это мощная и современная утилита для ОС Windows, предназначенная для изменения идентификаторов оборудования (HWID), сетевых адресов (MAC), параметров системы и отключения телеметрии. 
 
-If you are not comfortable with the command-line, simply start the batch file `START.bat` with Administrator privileges
+Программа разработана для защиты приватности, обхода трекеров, тестирования систем лицензирования и очистки цифровых следов (Anti-Detect).
 
-List of changed identificators:
+## 🌟 Основные возможности
 
-* Username
-* Hostname
-* Current windows build
-* Current windows build number
-* Windows build lab
-* BuildLabEx
-* BuildGuid
-* CryptoMachineGuid
-* DeviceGuid
-* CKCL Guid
-* HardwareProfileGuid
-* WMIGuid
-* EDGE Guid
-* InstallDate
-* ProductID
-* WindowsUpdateClientID
-* IE ProductID
-* IE KBNumber
-* IE Install date
-* VolumeID
-* MACadress
-* HardwareGUID
+* **📊 System Checker (Сканер):** Безопасный просмотр текущих серийных номеров (HWID, MAC, CPU, GPU, RAM, Motherboard).
+* **🌐 Network Spoofer:** Изменение имени ПК, имени пользователя и аппаратного MAC-адреса (с генерацией правильных LAA-адресов и автоматическим "бесшовным" перезапуском только физических адаптеров).
+* **🖥️ Hardware Spoofer:** Спуфинг MachineGuid, HwProfileGuid, Windows Update ClientId, а также серийного номера тома диска (VolumeID). Подмена OEM-данных материнской платы (Производитель, Модель).
+* **⚙️ System Spoofer:** Подмена Build GUID, ProductId, EditionID, InstallDate и версий сборки Windows.
+* **🕵️ Telemetry Spoofer:** Замена MachineId и сброс идентификаторов слежки DiagTrack от Microsoft.
+* **🧹 System Cleanup:** Очистка цифровых следов — сброс кэша DNS, Winsock, полная очистка логов Windows (Event Viewer) и удаление временных файлов (Temp/Prefetch).
+* **⏪ Backup & Restore (Система бэкапов):** Автоматическое сохранение заводских ключей реестра в `skufer_backup.json` перед первым изменением. Возможность полного отката (Restore) системы в 1 клик.
+
+### Полный список изменяемых идентификаторов:
+- Username / Hostname
+- Current Windows Build / Build Number
+- Windows BuildLab / BuildLabEx / BuildGuid
+- CryptoMachineGuid / HwProfileGuid
+- InstallDate / ProductID / DigitalProductID
+- WindowsUpdateClientID (SusClientId)
+- IE ProductID / IE KBNumber / IE Install date
+- Hardware OEM (Manufacturer, Model)
+- VolumeID (Диск C:)
+- MAC-адреса (с применением правил LAA)
+- Telemetry MachineID / DiagTrack
+
+---
+
+## ⚠️ Отказ от ответственности (Disclaimer)
+
+Этот инструмент предоставляется "КАК ЕСТЬ" (AS IS) исключительно в образовательных целях и для тестирования безопасности/приватности. Автор не несет ответственности за любой ущерб, потерю данных, аннулирование лицензий ОС/ПО или блокировки учетных записей, вызванные использованием данного скрипта. 
+**Используйте на свой страх и риск! Изменение реестра может повлиять на работу системных компонентов.**
+
+---
+
+## 🛠️ Системные требования
+
+* **ОС:** Windows 10 / Windows 11 (64-bit)
+* **Язык:** Python 3.8 или новее (если запускать из исходников)
+* **Права:** Строго **Администратор** (Скрипт проверяет наличие прав при запуске)
+
+---
+
+## 📦 Установка и запуск (Для исходников)
+
+1. Установите Python (при установке обязательно выберите "Custom" -> "Install for all users" и добавьте в PATH).
+2. Скачайте проект и убедитесь, что структура выглядит так:
+   ```text
+   SKUFER/
+    ├── bin/
+    │    ├── VolumeID.exe
+    │    └── VolumeID64.exe
+    ├── main_start.py
+    ├── system_checker.py
+    ├── generate_fingerprint.py
+    └── ... 
+   ```
+3. Установите зависимости:
+   ```cmd
+   pip install colorama
+   ```
+4. Запустите скрипт от имени Администратора:
+   ```cmd
+   python main_start.py
+   ```
+   *(Также вы можете использовать `python generate_fingerprint.py --help` для работы через командную строку без интерфейса).*
+
+---
+
+## 🚀 Сборка в автономный `.exe` файл
+
+Чтобы использовать SKUFER на любом ПК без установки Python, вы можете скомпилировать его в один исполняемый файл.
+
+1. Установите библиотеку PyInstaller:
+   ```cmd
+   pip install pyinstaller
+   ```
+2. Откройте командную строку в папке проекта и выполните:
+   ```cmd
+   pyinstaller --noconfirm --onefile --console --uac-admin --add-data "bin;bin" --name "SKUFER_v3" main_start.py
+   ```
+3. Готовый файл появится в папке `dist/` под именем `SKUFER_v3.exe`. Флаг `--uac-admin` заставит файл автоматически запрашивать права Администратора при запуске.
+
+---
+
+## 🛡️ Ложные срабатывания Антивируса (False Positives)
+
+Так как SKUFER взаимодействует с ядром системы (изменяет защищенные ветки HKLM, выполняет PowerShell-команды, перезапускает сеть), **Защитник Windows и другие антивирусы могут определять скомпилированный `.exe` как вредоносную программу (HackTool, Trojan и т.д.).**
+
+Это нормальное поведение для программ класса Anti-Detect / Spoofer. 
+**Решение:** Перед запуском добавьте папку с программой в **Исключения (Exclusions)** антивируса.
+
+---
+
+## 📄 Лицензия
+
+Распространяется под лицензией MIT. Вы можете свободно изучать, изменять и использовать этот код.
+```
